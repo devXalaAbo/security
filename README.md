@@ -1,2 +1,2 @@
-![](https://images-ext-2.discordapp.net/external/zd8CGgTxXIKNRTOCWg8YtDpkHrfwJoVkMXag9flMMIE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/681553671364018196/94fd33dc53f1662660d718a067bea6fa.png?width=473&height=473)
-# JANO
+![](https://images-ext-2.https://cdn.discordapp.com/banners/693104143405023303/256202b10a6d51398697140107ab0242.jpg)
+# by Xala Abo
