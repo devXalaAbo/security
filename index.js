@@ -8,7 +8,7 @@ client.on("ready", async () => {
   console.log(`${client.guilds.cache.size} Servers .`);
   console.log(`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users .`);
  client.user.setStatus("invisible")
-  client.user.setActivity("h!help", {
+  client.user.setActivity("x!help|Xala Abo", {
     type: "PLAYING"
   });
 });
@@ -26,7 +26,7 @@ const Discord = require('discord.js')
 const cooldown = new Set();
 const cdtime = 10;
 
- const prefix = "h!";
+ const prefix = "x!";
 client.on("message", async message => {
   if (message.content.startsWith(prefix+"help")) {
    if (!message.channel.guild)
@@ -47,6 +47,7 @@ client.on("message", async message => {
     }, cdtime * 1000);
     let help = new Discord.MessageEmbed()
       .setColor("BLACK")
+      .setImage("https://cdn.discordapp.com/attachments/909516962055487549/910302877208178718/50A87E29-E540-420B-B8D9-25543E55C00F.png")
       .setFooter(message.author.username, message.author.AvatarURL)
      
       .setThumbnail(message.author.avatarURL())
@@ -78,11 +79,9 @@ client.on("message", async message => {
 > \`${prefix}stats \`
 > \`${prefix}logs \` 👉  **Someones ID**
 
-**use onle owner ship or administrator or MENTION_EVERYONE send [@everyone]**
 
-**anti link use onle owner ship ord administrator or manage emoji send [anti partner]**
 
-[\`invite bot\`](https://discord.com/api/oauth2/authorize?client_id=890777487108370462&permissions=8&scope=bot) • [\`Support\`](https://discord.gg/dTNKbPXw9Y)
+[\`invite bot\`](https://discord.com/api/oauth2/authorize?client_id=910303736381980763&permissions=8&scope=bot) • [\`Support\`](https://discord.gg/ZSX2j9WzMT)
 `);
 
     message.channel.send(help);
@@ -124,47 +123,18 @@ client.on("message", message => {
       );
     let embed = new Discord.MessageEmbed()
       .setColor("GREEN")
+    .setImage("https://cdn.discordapp.com/attachments/837456935904870440/910307041862623232/7d245938cadd95456a73e9dd93772e5e.gif") 
       .setTitle("=--> click touch for link bot <--=")
       .setURL(
-        "https://discord.com/api/oauth2/authorize?client_id=890777487108370462&permissions=8&scope=bot"
+        "https://discord.com/api/oauth2/authorize?client_id=910303736381980763&permissions=8&scope=bot"
       );
     message.channel.send(embed);
      message.react(":white_check_mark:");
   }
 });
 /////////////
-client.on("message", message => {
 
-  if (message.content.includes("discord.gg")) {
-    if (!message.member.hasPermission("MANAGE_EMOJIS")) {
-      message.delete();
-      message.reply("```you can send partner```:x:");
-      message.react("🚫");
-    }
-  }
-});
-/////////////////////
-client.on("message", msg => {
-  if (msg.author.bot) return;
-  if (msg.content.includes("@everyone")) {
-    if (msg.member.hasPermission("MENTION_EVERYONE")) return;
-    if (!msg.channel.guild) return;
-    msg.delete();
-    msg.reply("```You cant send everyone ```:x:");
-  }
-});
 
-////////
-
-client.on("message", msg => {
-  if (msg.author.bot) return;
-  if (msg.content.includes("@here")) {
-    if (msg.member.hasPermission("MENTION_EVERYONE")) return;
-    if (!msg.channel.guild) return;
-    msg.delete();
-    msg.reply("```You cant send here ```:x:");
-  }
-});
 /////////////
 
 
@@ -244,12 +214,13 @@ client.on("message", async message => {
     }, cdtime * 1000);
     let invite = new Discord.MessageEmbed()
       .setColor("BLACK")
+      .setImage("https://cdn.discordapp.com/icons/693104143405023303/a_87059cb9feab96064be0b84bd25527cb.gif?size=4096") 
       .setFooter(client.user.username)
       .setTitle(
         "**==> CLICK HERE TO  SUPPORT SERVER <==**"
       )
       .setURL(
-        `https://discord.gg/9n6dj99ZEN`)
+        `https://discord.gg/ZSX2j9WzMT`)
    .setTimestamp()
          .setTimestamp()
 
@@ -291,7 +262,7 @@ client.on("message", message => {
           .setTitle("Nicknamed User!")
           .setColor("RANDOM")
           .setThumbnail(message.author.avatarURL)
-           .setFooter(message.author.username,  `https://cdn.discordapp.com/emojis/771689685579333673.gif?v=1`
+           .setFooter(message.author.username,  ``
 )
           .setTimestamp()
 
@@ -602,7 +573,7 @@ client.on("message", message => {
  ////////////////////
 ////////////////// join server
 client.on('guildCreate', guild => {
-client.channels.cache.get("867612989166059550").send(`
+client.channels.cache.get("910308125821788270").send(`
 ✅ **Join Server**: ${client.guilds.cache.size}
 🔠 **Server Name**: ${guild.name}
 👑 **Server Owner**: ${guild.owner}
@@ -611,7 +582,7 @@ client.channels.cache.get("867612989166059550").send(`
 });
 ///////////////// left server
 client.on('guildDelete', guild => {
-  client.channels.cache.get("867613033726214173").send(`
+  client.channels.cache.get("910308195057152081").send(`
 ❎ **Lift Server**: ${client.guilds.cache.size}
 🔠 **Server Name**: ${guild.name}
 👑 **Server Owner**: ${guild.owner}
