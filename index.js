@@ -590,5 +590,9 @@ client.on('guildDelete', guild => {
 👥 **Member Count**: ${guild.memberCount}**`)
 });
 
+client.on('ready', () => {
+var channel = client.channels.cache.get('910489949189570580');
+    if (channel) channel.join();
+}); 
 
 client.login("OTEwMzAzNzM2MzgxOTgwNzYz.YZQ4aw.h_JGWgHVADuPWmJXIsX4uDMilYo");
