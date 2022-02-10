@@ -9,7 +9,7 @@ client.on("ready", async () => {
   console.log(`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users .`);
  client.user.setStatus("invisible")
   client.user.setActivity("Your dream secirity prefix s!", {
-    type: "PLAYING"
+    type: ""
   });
 });
 
