@@ -26,7 +26,7 @@ const Discord = require('discord.js')
 const cooldown = new Set();
 const cdtime = 10;
 
- const prefix = "x!";
+ const prefix = "preFix";
 client.on("message", async message => {
   if (message.content.startsWith(prefix+"help")) {
    if (!message.channel.guild)
@@ -573,7 +573,7 @@ client.on("message", message => {
  ////////////////////
 ////////////////// join server
 client.on('guildCreate', guild => {
-client.channels.cache.get("910308125821788270").send(`
+client.channels.cache.get("Id Channel").send(`
 ✅ **Join Server**: ${client.guilds.cache.size}
 🔠 **Server Name**: ${guild.name}
 👑 **Server Owner**: ${guild.owner}
@@ -591,8 +591,8 @@ client.on('guildDelete', guild => {
 });
 
 client.on('ready', () => {
-var channel = client.channels.cache.get('910489949189570580');
+var channel = client.channels.cache.get('Channel Id');
     if (channel) channel.join();
 }); 
 
-client.login("OTEwMzAzNzM2MzgxOTgwNzYz.YZQ4aw.h_JGWgHVADuPWmJXIsX4uDMilYo");
+client.login("");
