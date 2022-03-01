@@ -8,7 +8,7 @@ client.on("ready", async () => {
   console.log(`${client.guilds.cache.size} Servers .`);
   console.log(`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Users .`);
  client.user.setStatus("invisible")
-  client.user.setActivity("Your dream secirity prefix s!", {
+  client.user.setActivity("Your dream Protection prefix s!", {
     type: ""
   });
 });
@@ -26,17 +26,17 @@ const Discord = require('discord.js')
 const cooldown = new Set();
 const cdtime = 10;
 
- const prefix = "preFix";
+ const prefix = "p!";
 client.on("message", async message => {
   if (message.content.startsWith(prefix+"help")) {
    if (!message.channel.guild)
       return message.channel.send(
-         "**❌ | Sorry This Command Only For Servers .**")
+         "** | Sorry This Command Only For Servers .**")
 
     
     if (cooldown.has(message.author.id)) {
       return message.channel
-        .send(`⏳ | Please wait for 10 second`)
+        .send(` | Please wait for 10 second`)
         .then(m => {
           m.delete({ timeout: cdtime * 600 });
         });
@@ -81,7 +81,7 @@ client.on("message", async message => {
 
 
 
-[\`invite bot\`](https://discord.com/api/oauth2/authorize?client_id=910303736381980763&permissions=8&scope=bot) • [\`Support\`](https://discord.gg/ZSX2j9WzMT)
+[\`invite bot\`](https://discord.com/oauth2/authorize?client_id=948250141998059530&permissions=8&scope=bot) • [\`Support\`](https://discord.gg/2daxHbRjbk)
 `);
 
     message.channel.send(help);
@@ -122,11 +122,11 @@ client.on("message", message => {
         "Please Do not type bot commands in bot private chat"
       );
     let embed = new Discord.MessageEmbed()
-      .setColor("GREEN")
-    .setImage("https://cdn.discordapp.com/attachments/837456935904870440/910307041862623232/7d245938cadd95456a73e9dd93772e5e.gif") 
+      .setColor("RANDOM")
+    .setImage("") 
       .setTitle("=--> click touch for link bot <--=")
       .setURL(
-        "https://discord.com/api/oauth2/authorize?client_id=910303736381980763&permissions=8&scope=bot"
+        "https://discord.com/oauth2/authorize?client_id=948250141998059530&permissions=8&scope=bot"
       );
     message.channel.send(embed);
      message.react(":white_check_mark:");
@@ -142,7 +142,7 @@ client.on("message", async message => {
   if (message.content.startsWith(prefix + "lock")) {
     if (!message.channel.guild)
       return message.channel.send(
-        "**❌ | Sorry This Command Only For Servers .**"
+        "**| Sorry This Command Only For Servers .**"
       );
 
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
@@ -155,7 +155,7 @@ client.on("message", async message => {
      
       .setColor("#00000")
       .setDescription(
-        `🔒 | **Locked Channel**
+         | **Locked Channel**
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
 Channel Status : Send Message : ❌
@@ -173,7 +173,7 @@ client.on("message", async message => {
   if (message.content.startsWith(prefix + "unlock")) {
     if (!message.channel.guild)
       return message.channel.send(
-         "**❌ | Sorry This Command Only For Servers .**"
+         "**| Sorry This Command Only For Servers .**"
       );
 
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
@@ -185,10 +185,10 @@ client.on("message", async message => {
     const unlock = new Discord.MessageEmbed()
       .setColor("#00000")
       .setDescription(
-        `🔓 | **UnLocked Channel**
+        `� | **UnLocked Channel**
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
-Channel Status : Send Message : ✅
+Channel Status : Send Message : 
 `
       )
       .setThumbnail(message.author.avatarURL())
@@ -299,7 +299,7 @@ client.on("message", message => {
         .hasPermission("MANAGE_CHANNELS")
     )
       return message.channel.send(
-        "🧐 - Please Check My Permission to can edit in this channel."
+        "- Please Check My Permission to can edit in this channel."
       );
 
     let time = message.content
@@ -308,7 +308,7 @@ client.on("message", message => {
       .join(" ");
     if (isNaN(time)) return message.channel.send("**🧐 - Its not a time**");
     if (!time)
-      return message.channel.send("**🧐 - Please Type a New SlowMode**");
+      return message.channel.send(" - Please Type a New SlowMode");
     message.channel.setRateLimitPerUser(time);
     message.channel.send("**Done Changed A SlowMode To: " + time + "**");
   }
@@ -322,7 +322,7 @@ client.on("message", message => {
   if (command === prefix + "clear") {
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
-        `❌ You are missing the permission \`MANAGE MESSAGES\`.`
+        ` You are missing the permission \`MANAGE MESSAGES\`.`
       );
     if (!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
@@ -357,9 +357,9 @@ client.on("message", prof => {
       .setThumbnail(client.user.avatarURL())
       .setColor("#0c0b0b")
       .setTitle("Your Info User")
-      .addField(" ▶️| Your Name", `<@${prof.author.id}>`)
-      .addField(" 🆔| Your ID", `${prof.author.id}`)
-      .addField(" 🌐| Create User", prof.author.createdAt.toLocaleString())
+      .addField("| Your Name", `<@${prof.author.id}>`)
+      .addField("| Your ID", `${prof.author.id}`)
+      .addField("| Create User", prof.author.createdAt.toLocaleString())
       .setFooter(`Requested | ${prof.author.tag}`, prof.author.avatarURL())
       .setTimestamp();
     prof.channel.send(professor);
@@ -396,7 +396,7 @@ client.on("message", async message => {
       });
     });
     message.guild.member(user).roles.add(mute);
-    message.channel.send(`**❌ ${user.username} has been muted!**`);
+    message.channel.send(`**${user.username} has been muted!**`);
   }
   if (message.content.toLowerCase() === `${prefix}help mute`) {
     let mute = new Discord.MessageEmbed()
@@ -431,7 +431,7 @@ client.on("message", async message => {
       });
     });
     message.guild.member(user).roles.remove(mute);
-    message.channel.send(`**✅ removed mute from ${user.username}!**`);
+    message.channel.send(`**removed mute from ${user.username}!**`);
   }
   if (message.content.toLowerCase() === `${prefix}help unmute`) {
     let unmute = new Discord.MessageEmbed()
@@ -467,11 +467,11 @@ client.on("message", async message => {
       message.mentions.users.first() ||
         message.guild.members.cache.find(x => x.id == args[0])
     );
-    if (!user) return message.channel.send("**❌ | Member not found!**");
+    if (!user) return message.channel.send("** | Member not found!**");
     let bot = message.guild.member(client.user);
     if (user.user.id == client.user.id) return message.channel.send("lol no");
     if (user.user.id == message.guild.owner.id)
-      return message.channel.send(`**❌ | You can't ${mode} the owner!**`);
+      return message.channel.send(`** | You can't ${mode} the owner!**`);
     if (
       user.roles.highest.position >= message.member.roles.highest.position &&
       message.author.id !== message.guild.ownerID
@@ -511,7 +511,7 @@ client.on("message", message => {
       if (!client.user.bot) return;
       list_all.push(`<@${client.user.id}>`);
     });
-    message.channel.send(list_all.join(", "));
+    message.channel.send(list_all.join(" "));
   }
 });
 client.on("message", msg => {
@@ -573,21 +573,21 @@ client.on("message", message => {
  ////////////////////
 ////////////////// join server
 client.on('guildCreate', guild => {
-client.channels.cache.get("Id Channel").send(`
-✅ **Join Server**: ${client.guilds.cache.size}
-🔠 **Server Name**: ${guild.name}
-👑 **Server Owner**: ${guild.owner}
-🆔 **Server Id**: ${guild.id}
-👥 **Member Count**: ${guild.memberCount}**`)
+client.channels.cache.get("938414499201970177").send(`
+**Join Server**: ${client.guilds.cache.size}
+**Server Name**: ${guild.name}
+ **Server Owner**: ${guild.owner}
+ **Server Id**: ${guild.id}
+ **Member Count**: ${guild.memberCount}**`)
 });
 ///////////////// left server
 client.on('guildDelete', guild => {
-  client.channels.cache.get("910308195057152081").send(`
-❎ **Lift Server**: ${client.guilds.cache.size}
-🔠 **Server Name**: ${guild.name}
-👑 **Server Owner**: ${guild.owner}
-🆔 **Server Id**: ${guild.id}
-👥 **Member Count**: ${guild.memberCount}**`)
+  client.channels.cache.get("938414499201970177").send(`
+ **Lift Server**: ${client.guilds.cache.size}
+**Server Name**: ${guild.name}
+ **Server Owner**: ${guild.owner}
+ **Server Id**: ${guild.id}
+ **Member Count**: ${guild.memberCount}**`)
 });
 
 client.on('ready', () => {
@@ -595,4 +595,4 @@ var channel = client.channels.cache.get('Channel Id');
     if (channel) channel.join();
 }); 
 
-client.login("");
+client.login("OTQ4MjUwMTQxOTk4MDU5NTMw.Yh5Eww.7xsAFPjNP3GmoXGCl6k1dUC64Ao");
