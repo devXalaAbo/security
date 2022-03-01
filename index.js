@@ -62,22 +62,22 @@ client.on("message", async message => {
 > \`${prefix}say \`
 > \`${prefix}time \`
 > **Admin Commands**
-> \`${prefix}ban \` 👉  @user
-> \`${prefix}kick \` 👉  @user
+> \`${prefix}ban \`   @user
+> \`${prefix}kick \`   @user
 > \`${prefix}lock \`
 > \`${prefix}unlock \`
 > \`${prefix}lock all \`
 > \`${prefix}unlock all \`
 > \`${prefix}clear \`
-> \`${prefix}mute \` 👉  @user
-> \`${prefix}unmute \` 👉  @user
-> \`${prefix}slowmode \` 👉  **set the channel**
+> \`${prefix}mute \`   @user
+> \`${prefix}unmute \`   @user
+> \`${prefix}slowmode \`   **set the channel**
 > \`${prefix}prefix \`
 > **Security Commands**
 > \`${prefix}settings \`
-> \`${prefix}log \` 👉  set **#channel**
+> \`${prefix}log \`   set **#channel**
 > \`${prefix}stats \`
-> \`${prefix}logs \` 👉  **Someones ID**
+> \`${prefix}logs \`   **Someones ID**
 
 
 
@@ -158,7 +158,7 @@ client.on("message", async message => {
          | **Locked Channel**
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
-Channel Status : Send Message : ❌
+Channel Status : Send Message : 
 `
       )
       .setThumbnail(message.author.avatarURL())
@@ -185,7 +185,7 @@ client.on("message", async message => {
     const unlock = new Discord.MessageEmbed()
       .setColor("#00000")
       .setDescription(
-        `� | **UnLocked Channel**
+        `| **UnLocked Channel**
 Channel Name : <#${message.channel.id}>
 Locked By : <@${message.author.id}>
 Channel Status : Send Message : 
@@ -203,7 +203,7 @@ client.on("message", async message => {
   if (message.content.startsWith(prefix + "support")) {
      if (cooldown.has(message.author.id)) {
       return message.channel
-        .send(`⏳ | Please wait for 10 second`)
+        .send(` | Please wait for 10 second`)
         .then(m => {
           m.delete({ timeout: cdtime * 600 });
         });
@@ -225,7 +225,7 @@ client.on("message", async message => {
          .setTimestamp()
 
     message.channel.send(invite);
-  message.react("✅");
+  message.react("");
   }
 });
 client.on("message", message => {
@@ -292,7 +292,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.content.startsWith(prefix + "slowmode")) {
     if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS"))
-      return message.channel.send("🧐 - Please Check Your Permission");
+      return message.channel.send(" - Please Check Your Permission");
     if (
       !message.guild
         .member(message.client.user)
@@ -306,7 +306,7 @@ client.on("message", message => {
       .split(" ")
       .slice(1)
       .join(" ");
-    if (isNaN(time)) return message.channel.send("**🧐 - Its not a time**");
+    if (isNaN(time)) return message.channel.send("** - Its not a time**");
     if (!time)
       return message.channel.send(" - Please Type a New SlowMode");
     message.channel.setRateLimitPerUser(time);
@@ -326,7 +326,7 @@ client.on("message", message => {
       );
     if (!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
-        `❌ I Am missing the permission \`MANAGE MESSAGES\`.`
+        ` I Am missing the permission \`MANAGE MESSAGES\`.`
       );
     if (!args[1]) {
       message.channel
@@ -461,7 +461,7 @@ client.on("message", async message => {
       )
     )
       return message.channel.send(
-        "**❌ | You don't have Permissions do to this.**"
+        "** | You don't have Permissions do to this.**"
       );
     let user = message.guild.member(
       message.mentions.users.first() ||
@@ -477,15 +477,15 @@ client.on("message", async message => {
       message.author.id !== message.guild.ownerID
     )
       return message.channel.send(
-        `**❌ | You can't ${mode} people higher ranked than yourself!**`
+        `** | You can't ${mode} people higher ranked than yourself!**`
       );
     if (user.roles.highest.position >= bot.roles.highest.position)
       return message.channel.send(
-        `**❌ | I can't ${mode} people who are higher ranked than me!**`
+        `** | I can't ${mode} people who are higher ranked than me!**`
       );
     if (!user[`${mode == "ban" ? "bann" : mode}able`])
       return message.channel.send(
-        `**❌ | Specified user is not ${mode}able.**`
+        `** | Specified user is not ${mode}able.**`
       );
     user[mode](
       mode == "ban"
@@ -494,7 +494,7 @@ client.on("message", async message => {
     )
       .then(() =>
         message.channel.send(
-          `**✅ ${mode == "ban" ? "Bann" : mode}ed ${user.user.tag} from the server! :airplane: **`
+          `** ${mode == "ban" ? "Bann" : mode}ed ${user.user.tag} from the server! :airplane: **`
         )
       )
       .catch(console.error);
@@ -523,7 +523,7 @@ client.on("message", msg => {
       
       });
     });
-    msg.channel.send("🔒 | **All Channels Locked**");
+    msg.channel.send(" | **All Channels Locked**");
   }
 });
  
@@ -536,7 +536,7 @@ client.on("message", msg => {
       
       });
     });
-    msg.channel.send("🔓 | **All Channels Unlocked**");
+    msg.channel.send(" | **All Channels Unlocked**");
   }
 });
 ////////////////////
