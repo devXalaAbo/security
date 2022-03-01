@@ -47,7 +47,7 @@ client.on("message", async message => {
     }, cdtime * 1000);
     let help = new Discord.MessageEmbed()
       .setColor("BLACK")
-      .setImage("https://cdn.discordapp.com/attachments/909516962055487549/910302877208178718/50A87E29-E540-420B-B8D9-25543E55C00F.png")
+      .setImage("")
       .setFooter(message.author.username, message.author.AvatarURL)
      
       .setThumbnail(message.author.avatarURL())
